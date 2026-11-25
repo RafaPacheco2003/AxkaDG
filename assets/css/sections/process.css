@@ -1,0 +1,128 @@
+/* =========================================================
+   PROCESO — etapas que avanzan con el scroll (sticky)
+   ========================================================= */
+
+.proc {
+  padding: 0;
+  background: var(--navy);
+  color: #fff;
+}
+
+/* Sin JS: lista normal. Con JS (.live): pista alta + escenario fijo */
+.track { padding: 96px 0; }
+.track.live { padding: 0; height: 480vh; }
+.track.live .stage {
+  position: sticky;
+  top: calc(68px + env(safe-area-inset-top, 0px));
+  height: calc(100vh - 68px - env(safe-area-inset-top, 0px));
+  display: flex;
+  align-items: center;
+}
+
+.pgrid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 72px;
+  align-items: center;
+  width: 100%;
+}
+
+/* ---------- Columna izquierda ---------- */
+.pl h2 { font-size: clamp(28px, 3.6vw, 44px); }
+.pl > p { margin-top: 18px; max-width: 34ch; color: #b9c8ec; }
+
+/* Indicador de etapas */
+.rail {
+  list-style: none;
+  margin: 40px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+}
+.track:not(.live) .rail { display: none; }
+
+.rail button {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 7px 0;
+  background: none;
+  border: 0;
+  font: 500 15px var(--font-body);
+  color: #7f93c2;
+  text-align: left;
+  cursor: pointer;
+  transition: color .3s;
+}
+.rail i {
+  flex: none;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #4a639b;
+  border-radius: 50%;
+  transition: all .35s;
+}
+.rail .done { color: #cdd9f5; }
+.rail .done i { background: var(--sky); border-color: var(--sky); }
+.rail .on { color: #fff; font-weight: 600; }
+.rail .on i {
+  background: #fff;
+  border-color: #fff;
+  box-shadow: 0 0 0 6px rgba(157, 184, 255, .25);
+}
+
+/* ---------- Columna derecha: etapas ---------- */
+.pr { display: grid; }
+
+.ph { grid-area: 1 / 1; padding: 8px 0; }
+.track:not(.live) .ph { grid-area: auto; margin-bottom: 56px; }
+
+.big {
+  font: 800 clamp(100px, 15vw, 190px)/.85 var(--font-display);
+  letter-spacing: -.05em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(157, 184, 255, .5);
+}
+.ph h3 { margin-top: 10px; font-size: clamp(30px, 4vw, 48px); }
+.q {
+  margin-top: 14px;
+  font: 600 clamp(17px, 1.8vw, 21px)/1.4 var(--font-display);
+  color: var(--sky);
+}
+.ph p { margin-top: 14px; max-width: 46ch; color: #cdd9f5; }
+
+/* Resultado ("Tú recibes") */
+.r {
+  margin-top: 26px;
+  padding: 4px 0 4px 18px;
+  max-width: 40ch;
+  border-left: 3px solid var(--sky);
+  font-weight: 500;
+}
+.r span { display: block; font-size: 14px; font-weight: 400; color: var(--sky); }
+
+/* Transición entre etapas */
+.live .ph { opacity: 0; visibility: hidden; transition: opacity .45s, visibility .45s; }
+.live .ph.on { opacity: 1; visibility: visible; }
+.live .ph > * {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .7s var(--ease-rise), transform .7s var(--ease-rise);
+}
+.live .ph > .big { transform: translateX(-36px); }
+.live .ph.on > * { opacity: 1; transform: none; }
+
+.ph.on > :nth-child(2) { transition-delay: .1s; }
+.ph.on > :nth-child(3) { transition-delay: .22s; }
+.ph.on > :nth-child(4) { transition-delay: .34s; }
+.ph.on > :nth-child(5) { transition-delay: .46s; }
+
+@media (max-width: 860px) {
+  .pgrid { grid-template-columns: 1fr; gap: 20px; }
+  .pl > p { display: none; }
+  .rail { display: flex; gap: 12px; margin-top: 20px; }
+  .rail span { display: none; }
+  .big { font-size: 84px; }
+  .ph h3 { font-size: 30px; }
+  .r { margin-top: 18px; }
+}

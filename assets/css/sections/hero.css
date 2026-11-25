@@ -1,0 +1,134 @@
+/* =========================================================
+   HERO — portada con red animada (canvas) y título animado
+   ========================================================= */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 104px 0 168px;
+  background: var(--navy);
+  color: #fff;
+}
+
+/* Marca de agua "AXKA" con brillo y parallax (--py lo pone JS) */
+.hero::after {
+  content: "AXKA";
+  position: absolute;
+  left: 50%;
+  bottom: -.2em;
+  transform: translateX(-50%) translateY(calc(var(--py, 0) * 1px));
+  font: 800 29vw/1 var(--font-display);
+  letter-spacing: -.04em;
+  white-space: nowrap;
+  pointer-events: none;
+  color: transparent;
+  background: linear-gradient(100deg, rgba(255, 255, 255, .045) 35%, rgba(157, 184, 255, .3) 50%, rgba(255, 255, 255, .045) 65%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: sheen 7s linear infinite -.6s, fadeup2 .5s ease both;
+}
+
+.hero .wrap { position: relative; z-index: 1; }
+
+/* Canvas de partículas */
+.hero canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  animation: fadeup2 2s .5s ease forwards;
+}
+
+/* Título: cada palabra sube desde una máscara */
+.hero h1 {
+  font-size: clamp(40px, 7.2vw, 92px);
+  max-width: 13ch;
+  letter-spacing: -.035em;
+  line-height: 1.02;
+}
+.hero h1 .w {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: .14em;
+  margin-bottom: -.14em;
+}
+.hero h1 .w > span {
+  display: inline-block;
+  transform: translateY(112%);
+  animation: up 1s var(--ease-out) forwards;
+  animation-delay: calc(.25s + var(--i) * .09s);
+}
+
+.hero p {
+  margin-top: 32px;
+  max-width: 52ch;
+  font-size: 19px;
+  color: #cdd9f5;
+}
+
+.cta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 44px;
+}
+
+.hero p,
+.hero .cta {
+  opacity: 0;
+  transform: translateY(22px);
+  animation: fadeup .9s var(--ease-out) forwards;
+}
+.hero p { animation-delay: 1s; }
+.hero .cta { animation-delay: 1.2s; }
+
+/* Indicador "Desliza" */
+.cue {
+  position: absolute;
+  z-index: 1;
+  bottom: 44px;
+  left: max(28px, calc(50% - 542px));
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font: 500 14px var(--font-body);
+  color: #b9c8ec;
+  text-decoration: none;
+  opacity: 0;
+  animation: fadeup 1s 1.7s forwards;
+}
+.cue:hover { color: #fff; }
+.cue i {
+  position: relative;
+  width: 2px;
+  height: 46px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, .22);
+}
+.cue i::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -50%;
+  width: 100%;
+  height: 50%;
+  background: var(--sky);
+  animation: drop 1.8s ease-in-out infinite;
+}
+
+@keyframes up   { to { transform: none; } }
+@keyframes drop { to { top: 110%; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero h1 .w > span,
+  .hero p,
+  .hero .cta,
+  .cue { animation: none; opacity: 1; transform: none; }
+  .hero canvas,
+  .cue i::after { display: none; }
+  .hero::after { animation: none; background: none; color: rgba(255, 255, 255, .05); }
+}

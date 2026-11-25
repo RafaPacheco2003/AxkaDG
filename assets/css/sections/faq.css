@@ -1,0 +1,79 @@
+/* =========================================================
+   FAQ — preguntas frecuentes (acordeón)
+   ========================================================= */
+
+.faq { background: var(--soft); }
+
+.fqg {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 72px;
+}
+.fqg .side { position: sticky; top: 112px; align-self: start; }
+.fqg .side p { margin-top: 20px; max-width: 32ch; }
+.fqg .side .btn { margin-top: 28px; }
+
+/* ---------- Pregunta ---------- */
+.fq { position: relative; border-top: 1px solid var(--line); }
+.fq:last-child { border-bottom: 1px solid var(--line); }
+
+/* Línea que crece al abrir / pasar el mouse */
+.fq::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  height: 2px;
+  background: var(--ink);
+  transition: width .6s var(--ease-out);
+}
+.fq[open]::after,
+.fq:hover::after { width: 100%; }
+
+.fq summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 26px 0;
+  list-style: none;
+  cursor: pointer;
+  font: 600 clamp(18px, 2vw, 21px)/1.3 var(--font-display);
+  letter-spacing: -.01em;
+  transition: padding-left .3s;
+}
+.fq summary:hover { padding-left: 10px; }
+.fq summary::-webkit-details-marker { display: none; }
+
+.fq summary svg {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  transition: transform .3s;
+}
+.fq[open] summary svg { transform: rotate(45deg); }
+
+.fq p {
+  padding: 0 48px 28px 0;
+  max-width: 56ch;
+  color: var(--muted);
+  animation: fd .4s;
+}
+
+@keyframes fd {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (max-width: 860px) {
+  .fqg { grid-template-columns: 1fr; gap: 36px; }
+  .fqg .side { position: static; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fq p { animation: none; }
+}

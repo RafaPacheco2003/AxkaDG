@@ -1,0 +1,20 @@
+/* =========================================================
+   REVEAL — aparición al hacer scroll
+   JS (reveal.js) agrega .rv y, al entrar en pantalla, .in
+   Se carga al final para que .rv.in gane sobre los estados iniciales.
+   ========================================================= */
+
+.rv {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity .8s var(--ease-out) var(--delay, 0s),
+    transform .8s var(--ease-out) var(--delay, 0s);
+}
+.wl > .rv { transform: translateX(-30px); }
+
+.rv.in { opacity: 1; transform: none; }
+
+/* Tras aparecer, devolver las transiciones propias del elemento */
+.way.rv.in { transition: padding .3s; }
+.btn.rv.in { transition: color .35s, border-color .35s, transform .35s var(--ease-out); }

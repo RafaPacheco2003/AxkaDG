@@ -1,0 +1,147 @@
+/* =========================================================
+   LAYOUT — header (navegación) y footer
+   ========================================================= */
+
+/* ---------- Header ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  padding-top: env(safe-area-inset-top, 0px);
+  background: var(--navy);
+  color: #fff;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.logo {
+  font: 800 23px/1 var(--font-display);
+  letter-spacing: .01em;
+  text-decoration: none;
+}
+.logo small {
+  display: block;
+  margin-top: 4px;
+  font: 600 7.5px/1 var(--font-display);
+  letter-spacing: .36em;
+}
+
+nav {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  font: 500 14.5px var(--font-body);
+}
+nav a { text-decoration: none; opacity: .8; }
+nav a:hover { opacity: 1; }
+nav .btn { opacity: 1; padding: 10px 20px; font-size: 14px; }
+
+@media (max-width: 780px) {
+  nav a:not(.btn) { display: none; }
+}
+
+/* ---------- Footer ---------- */
+.ft {
+  padding: 76px 0 0;
+  background: #01102f;
+  color: #a9b9de;
+  font-size: 15px;
+}
+
+/* CTA superior */
+.fcta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  padding-bottom: 56px;
+  margin-bottom: 56px;
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+.fcta h2 { font-size: clamp(26px, 3.6vw, 42px); color: #fff; max-width: 20ch; }
+
+/* Columnas */
+.fg {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+  gap: 48px;
+}
+.fg .logo { color: #fff; display: inline-block; }
+.fg .tg { margin-top: 20px; max-width: 30ch; }
+.fg h3 { margin: 0 0 18px; font: 600 14px/1.4 var(--font-body); letter-spacing: 0; color: #fff; }
+.fg ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 11px; }
+.fg a { text-decoration: none; }
+.fg a:hover { color: #fff; }
+
+/* Redes sociales */
+.soc { display: flex; gap: 10px; margin-top: 24px; }
+.soc a {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid rgba(255, 255, 255, .25);
+  border-radius: 2px;
+  transition: all .25s;
+}
+.soc a:hover { background: #fff; color: #01102f; border-color: #fff; }
+.soc svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Marca de agua "AXKA" con brillo */
+.wm {
+  position: relative;
+  height: 17vw;
+  overflow: hidden;
+  margin-top: 48px;
+  pointer-events: none;
+  user-select: none;
+}
+.wm span {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  font: 800 27vw/1 var(--font-display);
+  letter-spacing: -.05em;
+  color: transparent;
+  background: linear-gradient(100deg, rgba(255, 255, 255, .06) 35%, rgba(157, 184, 255, .28) 50%, rgba(255, 255, 255, .06) 65%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: sheen 7s linear infinite -.6s;
+}
+
+/* Barra inferior */
+.fb {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 22px 0 calc(30px + env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid rgba(255, 255, 255, .12);
+  font-size: 14px;
+}
+
+@media (max-width: 860px) {
+  .fg { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px) {
+  .fg { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wm span { animation: none; background: none; color: rgba(255, 255, 255, .06); }
+}

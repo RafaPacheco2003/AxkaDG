@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- ================= SEO =================
+       Dominio: https://axka.com  (si cambia, reemplázalo en este archivo,
+       robots.txt, sitemap.xml y site.webmanifest) -->
+  <title>Páginas web, software a medida e IA en Mérida | AXKA</title>
+  <meta name="description" content="Agencia de desarrollo en Mérida, Yucatán: páginas web, software a medida y automatización con inteligencia artificial para empresas. Primera asesoría sin costo.">
+  <link rel="canonical" href="https://axka.com/">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="AXKA Digital Growth">
+  <meta name="theme-color" content="#021b4a">
+  <link rel="alternate" hreflang="es-MX" href="https://axka.com/">
+  <link rel="alternate" hreflang="x-default" href="https://axka.com/">
+
+  <!-- SEO local -->
+  <meta name="geo.region" content="MX-YUC">
+  <meta name="geo.placename" content="Mérida, Yucatán">
+  <meta name="geo.position" content="20.9674;-89.5926">
+  <meta name="ICBM" content="20.9674, -89.5926">
+
+  <!-- Activa el loader antes de pintar (se omite con "reducir movimiento") -->
+  <script>
+    (function () {
+      // true = la pantalla de carga se ve solo la primera vez en cada visita
+      var ONCE_PER_SESSION = false;
+
+      if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      if (ONCE_PER_SESSION) {
+        try {
+          if (sessionStorage.getItem("axka-intro")) return;
+          sessionStorage.setItem("axka-intro", "1");
+        } catch (e) {}
+      }
+
+      var root = document.documentElement;
+      root.classList.add("has-loader", "is-loading");
+      // Seguridad: si el JS del loader fallara, la página no se queda bloqueada
+      setTimeout(function () {
+        root.classList.remove("has-loader", "is-loading");
+      }, 15000);
+    })();
+  </script>
+
+  <!-- Open Graph (vista previa en WhatsApp, Facebook, LinkedIn…) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AXKA Digital Growth">
+  <meta property="og:url" content="https://axka.com/">
+  <meta property="og:title" content="Páginas web, software a medida e IA en Mérida | AXKA">
+  <meta property="og:description" content="Desarrollamos páginas web, software a medida y automatización con IA para empresas. Primera asesoría sin costo.">
+  <meta property="og:image" content="https://axka.com/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="AXKA Digital Growth — Software que trabaja para tu negocio">
+  <meta property="og:locale" content="es_MX">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Páginas web, software a medida e IA en Mérida | AXKA">
+  <meta name="twitter:description" content="Desarrollamos páginas web, software a medida y automatización con IA para empresas. Primera asesoría sin costo.">
+  <meta name="twitter:image" content="https://axka.com/assets/img/og-image.png">
+  <meta name="twitter:image:alt" content="AXKA Digital Growth — Software que trabaja para tu negocio">
+
+  <!-- Íconos y manifiesto -->
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Datos estructurados (Google entiende quién eres, dónde estás y qué ofreces) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["ProfessionalService", "LocalBusiness"],
+        "@id": "https://axka.com/#negocio",
+        "name": "AXKA Digital Growth",
+        "url": "https://axka.com/",
+        "logo": "https://axka.com/assets/img/icon-512.png",
+        "image": "https://axka.com/assets/img/og-image.png",
+        "description": "Agencia de desarrollo en Mérida, Yucatán: páginas web, software a medida y automatización con inteligencia artificial para empresas.",
+        "email": "contacto@axka.com",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mérida",
+          "addressRegion": "Yucatán",
+          "addressCountry": "MX"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 20.9674,
+          "longitude": -89.5926
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Mérida" },
+          { "@type": "State", "name": "Yucatán" },
+          { "@type": "Country", "name": "México" }
+        ],
+        "openingHoursSpecification": [{
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }],
+        "knowsLanguage": "es",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Servicios",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Desarrollo de páginas web",
+                "description": "Sitios corporativos, tiendas en línea, páginas de campaña y posicionamiento en Google."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Software a medida",
+                "description": "Plataformas de gestión, paneles de control, aplicaciones web y móviles, e integración con tus herramientas."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Inteligencia artificial y automatización",
+                "description": "Asistentes para clientes, reportes automáticos, flujos entre sistemas y análisis de datos."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://axka.com/#sitio",
+        "url": "https://axka.com/",
+        "name": "AXKA Digital Growth",
+        "inLanguage": "es-MX",
+        "publisher": { "@id": "https://axka.com/#negocio" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://axka.com/#pagina",
+        "url": "https://axka.com/",
+        "name": "Páginas web, software a medida e IA en Mérida | AXKA",
+        "isPartOf": { "@id": "https://axka.com/#sitio" },
+        "about": { "@id": "https://axka.com/#negocio" },
+        "inLanguage": "es-MX"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://axka.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Cuánto cuesta mi proyecto?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Depende del alcance. Después de la primera conversación recibes una propuesta por escrito con el precio claro, sin costos ocultos." }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto tarda?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Una página web puede estar lista en pocas semanas y un sistema a medida toma más tiempo. En la propuesta te damos fechas concretas para cada etapa." }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Necesito saber de tecnología?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Tú nos cuentas qué necesitas con tus propias palabras. Nosotros nos encargamos de lo técnico y te explicamos todo de forma sencilla." }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué pasa después de la entrega?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Capacitamos a tu equipo y seguimos disponibles para soporte y mejoras. No desaparecemos cuando termina el proyecto." }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Trabajan con empresas pequeñas?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Sí. Cada proyecto se ajusta al tamaño y la operación de tu negocio, y puedes empezar por una parte e ir creciendo." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Montserrat:wght@500;600;800&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/sections/hero.css">
+  <link rel="stylesheet" href="assets/css/sections/services.css">
+  <link rel="stylesheet" href="assets/css/sections/process.css">
+  <link rel="stylesheet" href="assets/css/sections/commitment.css">
+  <link rel="stylesheet" href="assets/css/sections/faq.css">
+  <link rel="stylesheet" href="assets/css/sections/contact.css">
+  <link rel="stylesheet" href="assets/css/reveal.css">
+  <link rel="stylesheet" href="assets/css/effects.css">
+  <link rel="stylesheet" href="assets/css/loader.css">
+
+  <!-- Scripts (defer: se ejecutan cuando el HTML ya está listo) -->
+  <script src="assets/js/loader.js" defer></script>
+  <script src="assets/js/header.js" defer></script>
+  <script src="assets/js/split-headings.js" defer></script>
+  <script src="assets/js/pointer-effects.js" defer></script>
+  <script src="assets/js/hero-network.js" defer></script>
+  <script src="assets/js/services-tabs.js" defer></script>
+  <script src="assets/js/process-scroll.js" defer></script>
+  <script src="assets/js/commitment.js" defer></script>
+  <script src="assets/js/faq.js" defer></script>
+  <script src="assets/js/reveal.js" defer></script>
+  <script src="assets/js/contact-form.js" defer></script>
+</head>
+<body>
+
+  <!-- ================= LOADER =================
+       Pantalla de carga: el logo se dibuja trazo a trazo y se rellena
+       mientras la página carga; se va en cuanto está lista.
+       Ver assets/js/loader.js. Contornos: Montserrat 800/600 (SIL OFL). -->
+  <div class="loader" id="loader" role="status" aria-live="polite">
+    <span class="loader-sr">Cargando AXKA Digital Growth…</span>
+      <svg class="loader-logo" viewBox="-53.153 -1.2 106.307 28.424" aria-hidden="true">
+        <g class="loader-logo-group">
+          <!-- 1) Contornos que se dibujan -->
+          <g class="loader-outline" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path id="axl-g0" class="loader-w" data-delay="0" stroke-width=".3" d="M-35.864 16.1H-31.215L-29.958 12.966H-23.135L-21.878 16.1H-17.151L-24.268 -0H-28.754ZM-24.479 9.612H-28.614L-26.546 4.456L-24.479 9.612Z"/><!-- A -->
+            <path id="axl-g1" class="loader-w" data-delay="50" stroke-width=".3" d="M-17.281 16.1H-12.079L-8.8 11.116L-5.447 16.1H-0.222L-6.198 7.778L-0.589 -0H-5.503L-8.669 4.655L-11.9 -0H-17.032L-11.408 7.936Z"/><!-- X -->
+            <path id="axl-g2" class="loader-w" data-delay="100" stroke-width=".3" d="M1.566 16.1H6.06V12.073L7.756 10.259L12.374 16.1H17.661L10.747 7.132L17.304 -0H12.299L6.06 6.703V-0H1.566Z"/><!-- K -->
+            <path id="axl-g3" class="loader-w" data-delay="150" stroke-width=".3" d="M17.151 16.1H21.8L23.057 12.966H29.88L31.137 16.1H35.864L28.747 -0H24.261ZM28.536 9.612H24.401L26.469 4.456L28.536 9.612Z"/><!-- A -->
+            <path id="axl-g4" class="loader-t" data-delay="60" stroke-width=".18" d="M-51.953 25.95H-49.66Q-48.808 25.95 -48.164 25.621Q-47.519 25.293 -47.157 24.704Q-46.795 24.115 -46.795 23.325Q-46.795 22.534 -47.157 21.945Q-47.519 21.357 -48.164 21.029Q-48.808 20.7 -49.66 20.7H-51.953ZM-50.98 25.125V21.525H-49.709Q-49.118 21.525 -48.687 21.749Q-48.255 21.973 -48.016 22.375Q-47.777 22.776 -47.777 23.325Q-47.777 23.866 -48.016 24.271Q-48.255 24.677 -48.687 24.901Q-49.118 25.125 -49.709 25.125Z"/><!-- D -->
+            <path id="axl-g5" class="loader-t" data-delay="72" stroke-width=".18" d="M-43.058 25.95H-42.085V20.7H-43.058Z"/><!-- I -->
+            <path id="axl-g6" class="loader-t" data-delay="83" stroke-width=".18" d="M-35.518 26.024Q-34.96 26.024 -34.416 25.855Q-33.873 25.686 -33.465 25.357V23.267H-34.382V24.898Q-34.543 24.992 -34.71 25.049Q-35.073 25.173 -35.465 25.173Q-35.88 25.173 -36.227 25.037Q-36.573 24.901 -36.829 24.65Q-37.086 24.399 -37.225 24.06Q-37.364 23.722 -37.364 23.325Q-37.364 22.92 -37.225 22.582Q-37.086 22.244 -36.829 21.996Q-36.573 21.748 -36.222 21.613Q-35.872 21.477 -35.455 21.477Q-35.031 21.477 -34.674 21.623Q-34.316 21.77 -34.01 22.081L-33.394 21.481Q-33.765 21.059 -34.301 20.842Q-34.837 20.626 -35.5 20.626Q-36.12 20.626 -36.637 20.824Q-37.155 21.023 -37.539 21.387Q-37.924 21.752 -38.135 22.244Q-38.346 22.737 -38.346 23.325Q-38.346 23.913 -38.135 24.406Q-37.924 24.898 -37.543 25.263Q-37.162 25.627 -36.646 25.826Q-36.129 26.024 -35.518 26.024Z"/><!-- G -->
+            <path id="axl-g7" class="loader-t" data-delay="95" stroke-width=".18" d="M-29.476 25.95H-28.502V20.7H-29.476Z"/><!-- I -->
+            <path id="axl-g8" class="loader-t" data-delay="107" stroke-width=".18" d="M-23.322 25.95H-22.348V21.524H-20.608V20.7H-25.062V21.524H-23.322Z"/><!-- T -->
+            <path id="axl-g9" class="loader-t" data-delay="118" stroke-width=".18" d="M-17.915 25.95H-16.911L-16.39 24.735H-13.766L-13.245 25.95H-12.225L-14.591 20.7H-15.554ZM-14.094 23.969H-16.062L-15.078 21.674L-14.094 23.969Z"/><!-- A -->
+            <path id="axl-g10" class="loader-t" data-delay="130" stroke-width=".18" d="M-8.851 25.95H-5.135V25.126H-7.877V20.7H-8.851Z"/><!-- L -->
+            <path id="axl-g11" class="loader-t" data-delay="142" stroke-width=".18" d="M5.56 26.024Q6.118 26.024 6.661 25.855Q7.204 25.686 7.612 25.357V23.267H6.695V24.898Q6.535 24.992 6.367 25.049Q6.004 25.173 5.613 25.173Q5.197 25.173 4.851 25.037Q4.504 24.901 4.248 24.65Q3.992 24.399 3.853 24.06Q3.714 23.722 3.714 23.325Q3.714 22.92 3.853 22.582Q3.992 22.244 4.248 21.996Q4.504 21.748 4.855 21.613Q5.206 21.477 5.622 21.477Q6.046 21.477 6.404 21.623Q6.761 21.77 7.067 22.081L7.684 21.481Q7.313 21.059 6.776 20.842Q6.24 20.626 5.578 20.626Q4.958 20.626 4.44 20.824Q3.923 21.023 3.538 21.387Q3.154 21.752 2.943 22.244Q2.732 22.737 2.732 23.325Q2.732 23.913 2.943 24.406Q3.154 24.898 3.535 25.263Q3.915 25.627 4.432 25.826Q4.949 26.024 5.56 26.024Z"/><!-- G -->
+            <path id="axl-g12" class="loader-t" data-delay="153" stroke-width=".18" d="M11.602 25.95H12.575V24.421H13.757Q13.862 24.421 13.962 24.416L15.032 25.95H16.086L14.878 24.23Q14.916 24.215 14.953 24.198Q15.453 23.976 15.723 23.56Q15.993 23.144 15.993 22.569Q15.993 21.693 15.395 21.197Q14.798 20.7 13.747 20.7H11.602ZM12.575 23.615V21.523H13.716Q14.358 21.523 14.685 21.796Q15.011 22.068 15.011 22.569Q15.011 23.063 14.685 23.339Q14.358 23.615 13.716 23.615H12.575Z"/><!-- R -->
+            <path id="axl-g13" class="loader-t" data-delay="165" stroke-width=".18" d="M22.238 26.024Q22.849 26.024 23.363 25.824Q23.878 25.623 24.258 25.26Q24.639 24.896 24.85 24.404Q25.062 23.911 25.062 23.325Q25.062 22.739 24.85 22.247Q24.639 21.754 24.258 21.39Q23.878 21.027 23.363 20.826Q22.849 20.626 22.236 20.626Q21.625 20.626 21.108 20.827Q20.591 21.029 20.209 21.395Q19.827 21.761 19.616 22.251Q19.404 22.741 19.404 23.325Q19.404 23.908 19.616 24.399Q19.827 24.89 20.208 25.255Q20.59 25.619 21.109 25.822Q21.628 26.024 22.238 26.024ZM22.236 25.173Q21.839 25.173 21.501 25.037Q21.163 24.902 20.913 24.65Q20.663 24.398 20.525 24.061Q20.386 23.724 20.386 23.323Q20.386 22.922 20.525 22.587Q20.664 22.252 20.914 22.001Q21.165 21.751 21.502 21.614Q21.839 21.477 22.236 21.477Q22.634 21.477 22.97 21.614Q23.305 21.751 23.554 22.001Q23.803 22.25 23.942 22.585Q24.08 22.92 24.08 23.323Q24.08 23.727 23.941 24.064Q23.802 24.401 23.553 24.65Q23.304 24.9 22.969 25.036Q22.634 25.173 22.236 25.173Z"/><!-- O -->
+            <path id="axl-g14" class="loader-t" data-delay="177" stroke-width=".18" d="M30.035 25.95H31.077L32.394 22.074L33.692 25.95H34.728L36.467 20.7H35.538L34.195 24.715L32.871 20.7H31.969L30.609 24.692L29.303 20.7H28.297Z"/><!-- W -->
+            <path id="axl-g15" class="loader-t" data-delay="188" stroke-width=".18" d="M41.141 25.95H42.114V21.524H43.854V20.7H39.401V21.524H41.141Z"/><!-- T -->
+            <path id="axl-g16" class="loader-t" data-delay="200" stroke-width=".18" d="M50.98 25.95H51.953V20.7H50.98V22.867H48.268V20.7H47.294V25.95H48.268V23.702H50.98Z"/><!-- H -->
+          </g>
+          <!-- 2) Relleno (mismos contornos) -->
+          <g class="loader-fill" opacity="0">
+            <use href="#axl-g0" class="loader-word"/>
+            <use href="#axl-g1" class="loader-word"/>
+            <use href="#axl-g2" class="loader-word"/>
+            <use href="#axl-g3" class="loader-word"/>
+            <use href="#axl-g4" class="loader-tagline"/>
+            <use href="#axl-g5" class="loader-tagline"/>
+            <use href="#axl-g6" class="loader-tagline"/>
+            <use href="#axl-g7" class="loader-tagline"/>
+            <use href="#axl-g8" class="loader-tagline"/>
+            <use href="#axl-g9" class="loader-tagline"/>
+            <use href="#axl-g10" class="loader-tagline"/>
+            <use href="#axl-g11" class="loader-tagline"/>
+            <use href="#axl-g12" class="loader-tagline"/>
+            <use href="#axl-g13" class="loader-tagline"/>
+            <use href="#axl-g14" class="loader-tagline"/>
+            <use href="#axl-g15" class="loader-tagline"/>
+            <use href="#axl-g16" class="loader-tagline"/>
+          </g>
+        </g>
+      </svg>
+  </div>
+
+  <!-- ================= HEADER ================= -->
+  <header>
+    <div class="wrap bar">
+      <a class="logo" href="#inicio" aria-label="AXKA Digital Growth, inicio">AXKA<small>DIGITAL GROWTH</small></a>
+      <nav aria-label="Principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Cómo trabajamos</a>
+        <a href="#compromiso">Compromiso</a>
+        <a class="btn light" href="#contacto">Contacto</a>
+      </nav>
+    </div>
+    <div class="progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="inicio">
+      <canvas id="hero-network" aria-hidden="true"></canvas>
+      <a class="cue" href="#servicios" aria-label="Bajar a servicios"><i></i>Desliza</a>
+
+      <div class="wrap">
+        <h1>
+          <span class="w"><span style="--i:0">Software</span></span>
+          <span class="w"><span style="--i:1">que</span></span>
+          <span class="w"><span style="--i:2">trabaja</span></span>
+          <span class="w"><span style="--i:3">para</span></span>
+          <span class="w"><span style="--i:4">tu</span></span>
+          <span class="w"><span style="--i:5">negocio.</span></span>
+        </h1>
+        <p>Desarrollamos páginas web, sistemas a la medida y automatización con inteligencia artificial para empresas en Mérida, Yucatán y todo México. Empezamos por entender qué necesitas.</p>
+        <div class="cta">
+          <a class="btn light" href="#contacto">Agenda una conversación</a>
+          <a class="btn line" href="#proceso">Conoce nuestro proceso</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FRANJA DE SERVICIOS =================
+         Decorativa: el contenido va duplicado para que el bucle no tenga cortes -->
+    <div class="band" aria-hidden="true">
+      <div class="band-track">
+        <div class="band-group">
+          <span>Páginas web</span><i></i>
+          <span>Software a medida</span><i></i>
+          <span>IA y automatización</span><i></i>
+          <span>Tiendas en línea</span><i></i>
+          <span>Paneles de control</span><i></i>
+          <span>Asistentes para clientes</span><i></i>
+        </div>
+        <div class="band-group">
+          <span>Páginas web</span><i></i>
+          <span>Software a medida</span><i></i>
+          <span>IA y automatización</span><i></i>
+          <span>Tiendas en línea</span><i></i>
+          <span>Paneles de control</span><i></i>
+          <span>Asistentes para clientes</span><i></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= SERVICIOS ================= -->
+    <section class="soft" id="servicios">
+      <div class="wrap">
+        <div class="head">
+          <h2>Qué construimos</h2>
+          <p class="muted">Cada proyecto se diseña para tu operación, no al revés. Puedes empezar con uno y sumar el resto cuando lo necesites.</p>
+        </div>
+
+        <div class="svc" id="svc">
+          <!-- Pestañas -->
+          <div class="tabs" role="tablist">
+            <button type="button" class="tab" role="tab" id="tab-web" aria-controls="panel-web">
+              <h3>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg>
+                Páginas web
+              </h3>
+              <p>Sitios que presentan tu empresa con claridad, cargan rápido y se ven bien en cualquier pantalla.</p>
+            </button>
+            <button type="button" class="tab" role="tab" id="tab-software" aria-controls="panel-software">
+              <h3>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg>
+                Software personalizado
+              </h3>
+              <p>Sistemas hechos a partir de cómo trabaja tu equipo, sin pagar por funciones que no usas.</p>
+            </button>
+            <button type="button" class="tab" role="tab" id="tab-ia" aria-controls="panel-ia">
+              <h3>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 3v4M15 3v4M9 17v4M15 17v4M3 9h4M3 15h4M17 9h4M17 15h4"/></svg>
+                IA y automatización
+              </h3>
+              <p>Delegamos las tareas repetitivas a la tecnología para que tu equipo se dedique a lo que importa.</p>
+            </button>
+          </div>
+
+          <!-- Paneles -->
+          <div class="sp">
+            <!-- Panel: Páginas web -->
+            <div class="pn" role="tabpanel" id="panel-web" aria-labelledby="tab-web">
+              <svg viewBox="0 0 400 230" aria-hidden="true">
+                <rect class="f" x="10" y="10" width="380" height="210" rx="6" style="--i:0"/>
+                <path class="l" d="M10 38h380" style="--i:1"/>
+                <circle class="a" cx="26" cy="24" r="4" style="--i:1"/>
+                <rect class="a" x="34" y="58" width="150" height="14" rx="2" style="--i:2"/>
+                <rect class="f" x="34" y="82" width="200" height="8" rx="2" style="--i:3"/>
+                <rect class="f" x="34" y="98" width="170" height="8" rx="2" style="--i:3"/>
+                <rect class="a" x="34" y="120" width="64" height="20" rx="2" style="--i:4"/>
+                <rect class="f" x="262" y="56" width="104" height="86" rx="3" style="--i:3"/>
+                <path class="s" d="M274 126l24-26 20 18 18-22 22 30" style="--i:4"/>
+                <rect class="f" x="34" y="160" width="100" height="46" rx="3" style="--i:5"/>
+                <rect class="f" x="150" y="160" width="100" height="46" rx="3" style="--i:6"/>
+                <rect class="f" x="266" y="160" width="100" height="46" rx="3" style="--i:7"/>
+              </svg>
+              <ul>
+                <li>Sitios corporativos</li>
+                <li>Tiendas en línea</li>
+                <li>Páginas de campaña</li>
+                <li>Posicionamiento en Google</li>
+              </ul>
+            </div>
+
+            <!-- Panel: Software personalizado -->
+            <div class="pn" role="tabpanel" id="panel-software" aria-labelledby="tab-software">
+              <svg viewBox="0 0 400 230" aria-hidden="true">
+                <rect class="f" x="10" y="10" width="70" height="210" rx="6" style="--i:0"/>
+                <path class="l" d="M24 40h42M24 62h42M24 84h28" style="--i:1"/>
+                <rect class="f" x="94" y="22" width="92" height="48" rx="4" style="--i:1"/>
+                <rect class="f" x="198" y="22" width="92" height="48" rx="4" style="--i:2"/>
+                <rect class="f" x="302" y="22" width="88" height="48" rx="4" style="--i:3"/>
+                <rect class="f" x="94" y="82" width="296" height="138" rx="4" style="--i:3"/>
+                <rect class="a" x="120" y="168" width="24" height="40" style="--i:4"/>
+                <rect class="a" x="160" y="146" width="24" height="62" style="--i:5"/>
+                <rect class="a" x="200" y="158" width="24" height="50" style="--i:6"/>
+                <rect class="a" x="240" y="124" width="24" height="84" style="--i:7"/>
+                <path class="s" d="M290 170l30-26 22 8 30-40" style="--i:8"/>
+              </svg>
+              <ul>
+                <li>Plataformas de gestión</li>
+                <li>Paneles de control</li>
+                <li>Aplicaciones web y móviles</li>
+                <li>Integración con tus herramientas</li>
+              </ul>
+            </div>
+
+            <!-- Panel: IA y automatización -->
+            <div class="pn" role="tabpanel" id="panel-ia" aria-labelledby="tab-ia">
+              <svg viewBox="0 0 400 230" aria-hidden="true">
+                <rect class="f" x="10" y="10" width="220" height="48" rx="10" style="--i:0"/>
+                <path class="l" d="M28 28h150M28 42h100" style="--i:1"/>
+                <rect class="a" x="170" y="70" width="220" height="48" rx="10" style="--i:2"/>
+                <path class="nv" d="M188 88h150M188 102h90" style="--i:3"/>
+                <circle class="f" cx="48" cy="178" r="22" style="--i:4"/>
+                <path class="s" d="M70 178h56" style="--i:5"/>
+                <circle class="f" cx="148" cy="178" r="22" style="--i:5"/>
+                <path class="s" d="M170 178h56" style="--i:6"/>
+                <circle class="a" cx="248" cy="178" r="22" style="--i:6"/>
+                <path class="s" d="M270 178h56" style="--i:7"/>
+                <rect class="f" x="330" y="156" width="56" height="44" rx="4" style="--i:8"/>
+              </svg>
+              <ul>
+                <li>Asistentes para clientes</li>
+                <li>Reportes automáticos</li>
+                <li>Flujos entre sistemas</li>
+                <li>Análisis de datos</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROCESO ================= -->
+    <section class="proc" id="proceso">
+      <div class="track" id="track">
+        <div class="stage">
+          <div class="wrap pgrid">
+            <div class="pl">
+              <h2>Del primer mensaje a tu lanzamiento</h2>
+              <p>Seis etapas, cada una con un resultado concreto. Siempre sabrás en qué punto estamos y qué sigue.</p>
+              <div class="rail" aria-label="Etapas">
+                <button type="button"><i></i><span>Conversamos</span></button>
+                <button type="button"><i></i><span>Planeamos</span></button>
+                <button type="button"><i></i><span>Diseñamos</span></button>
+                <button type="button"><i></i><span>Construimos</span></button>
+                <button type="button"><i></i><span>Probamos</span></button>
+                <button type="button"><i></i><span>Lanzamos y acompañamos</span></button>
+              </div>
+            </div>
+
+            <div class="pr">
+              <article class="ph">
+                <div class="big">1</div>
+                <h3>Conversamos</h3>
+                <div class="q">Primero escuchar. Después construir.</div>
+                <p>Nos cuentas tu negocio, tus problemas y lo que quieres lograr. Preguntamos hasta entenderlo bien. Esta primera charla no tiene costo.</p>
+                <div class="r"><span>Tú recibes</span>Claridad sobre qué necesitas y por dónde empezar</div>
+              </article>
+              <article class="ph">
+                <div class="big">2</div>
+                <h3>Planeamos</h3>
+                <div class="q">Sin letras chiquitas.</div>
+                <p>Definimos qué se construye, en cuánto tiempo y con qué inversión.</p>
+                <div class="r"><span>Tú recibes</span>Una propuesta por escrito con alcance, plazos y precio</div>
+              </article>
+              <article class="ph">
+                <div class="big">3</div>
+                <h3>Diseñamos</h3>
+                <div class="q">Lo ves antes de que exista.</div>
+                <p>Antes de programar te mostramos cómo se verá y funcionará, para ajustar a tiempo.</p>
+                <div class="r"><span>Tú recibes</span>Un prototipo que puedes ver y comentar</div>
+              </article>
+              <article class="ph">
+                <div class="big">4</div>
+                <h3>Construimos</h3>
+                <div class="q">Avances reales, no promesas.</div>
+                <p>Desarrollamos el proyecto y te vamos mostrando los avances.</p>
+                <div class="r"><span>Tú recibes</span>Entregas parciales que puedes probar</div>
+              </article>
+              <article class="ph">
+                <div class="big">5</div>
+                <h3>Probamos</h3>
+                <div class="q">Los errores se encuentran aquí, no en tu negocio.</div>
+                <p>Revisamos cada función en distintos dispositivos y escenarios antes de entregar.</p>
+                <div class="r"><span>Tú recibes</span>Un producto revisado y listo para usar</div>
+              </article>
+              <article class="ph">
+                <div class="big">6</div>
+                <h3>Lanzamos y acompañamos</h3>
+                <div class="q">El lanzamiento es solo el comienzo.</div>
+                <p>Publicamos, capacitamos a tu equipo y seguimos disponibles para soporte y mejoras.</p>
+                <div class="r"><span>Tú recibes</span>Tu proyecto en línea, capacitación y soporte</div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COMPROMISO ================= -->
+    <section class="com" id="compromiso">
+      <div class="wrap">
+        <div class="top">
+          <h2>La tecnología debe ser una ventaja, no un problema.</h2>
+          <p class="muted">Este es nuestro compromiso: cambiar lo que hoy te cuesta tiempo y clientes por algo que trabaja a tu favor.</p>
+        </div>
+
+        <div class="cmp" id="cmp">
+          <div class="cr hd">
+            <div>Nuestro compromiso</div>
+            <div>Lo que pasa hoy</div>
+            <div>Lo que logramos juntos</div>
+          </div>
+
+          <div class="cr">
+            <div class="c1">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              <h3>Ahorrar tu tiempo</h3>
+              <p>Automatizamos lo repetitivo para que dediques tus horas a hacer crecer el negocio.</p>
+            </div>
+            <div class="pain">Copias datos a mano, armas reportes uno por uno y repites las mismas tareas todos los días.</div>
+            <div class="gain">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>
+              <span>Los procesos repetitivos se hacen solos y tu equipo recupera horas cada semana.</span>
+            </div>
+          </div>
+
+          <div class="cr">
+            <div class="c1">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17l5-5 4 4 7-8M15 8h5v5"/></svg>
+              <h3>Ayudarte a vender más</h3>
+              <p>Creamos herramientas que atraen, atienden y retienen mejor a tus clientes.</p>
+            </div>
+            <div class="pain">Los clientes no te encuentran, esperan una respuesta o se van sin comprar.</div>
+            <div class="gain">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>
+              <span>Una presencia digital que atrae, responde al instante y da seguimiento a cada cliente.</span>
+            </div>
+          </div>
+
+          <div class="cr">
+            <div class="c1">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v10H10l-4 4v-4H5z"/></svg>
+              <h3>Hablar claro</h3>
+              <p>Te explicamos todo en lenguaje sencillo, para que decidas con información completa.</p>
+            </div>
+            <div class="pain">Propuestas llenas de tecnicismos, costos confusos y dudas sin responder.</div>
+            <div class="gain">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>
+              <span>Explicaciones sencillas, precios por escrito y decisiones con toda la información.</span>
+            </div>
+          </div>
+
+          <div class="cr">
+            <div class="c1">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12h6M7 8a4 4 0 000 8M17 8a4 4 0 010 8"/></svg>
+              <h3>Crecer contigo</h3>
+              <p>Buscamos relaciones a largo plazo, con soluciones que evolucionan junto a tu empresa.</p>
+            </div>
+            <div class="pain">Un proveedor que entrega y desaparece, y un sistema que se queda atrás.</div>
+            <div class="gain">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>
+              <span>Un equipo que te acompaña, da soporte y hace evolucionar tu solución cuando tu empresa crece.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cl">
+          <p>Si la tecnología no te simplifica la vida, aún no hemos terminado.</p>
+          <a class="btn navy" href="#contacto">Cuéntanos tu caso</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="faq" id="faq">
+      <div class="wrap fqg">
+        <div class="side">
+          <h2>Antes de escribirnos</h2>
+          <p class="muted">Respuestas a las dudas que más nos hacen al empezar un proyecto.</p>
+          <a class="btn navy" href="#contacto">Hacer otra pregunta</a>
+        </div>
+
+        <div>
+          <details class="fq" open>
+            <summary>¿Cuánto cuesta mi proyecto?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+            <p>Depende del alcance. Después de la primera conversación recibes una propuesta por escrito con el precio claro, sin costos ocultos.</p>
+          </details>
+          <details class="fq">
+            <summary>¿Cuánto tarda?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+            <p>Una página web puede estar lista en pocas semanas y un sistema a medida toma más tiempo. En la propuesta te damos fechas concretas para cada etapa.</p>
+          </details>
+          <details class="fq">
+            <summary>¿Necesito saber de tecnología?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+            <p>No. Tú nos cuentas qué necesitas con tus propias palabras. Nosotros nos encargamos de lo técnico y te explicamos todo de forma sencilla.</p>
+          </details>
+          <details class="fq">
+            <summary>¿Qué pasa después de la entrega?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+            <p>Capacitamos a tu equipo y seguimos disponibles para soporte y mejoras. No desaparecemos cuando termina el proyecto.</p>
+          </details>
+          <details class="fq">
+            <summary>¿Trabajan con empresas pequeñas?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+            <p>Sí. Cada proyecto se ajusta al tamaño y la operación de tu negocio, y puedes empezar por una parte e ir creciendo.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACTO ================= -->
+    <section class="contact" id="contacto">
+      <div class="wrap cg">
+        <div>
+          <h2>Platiquemos de tu proyecto</h2>
+          <p class="lead2">Cuéntanos qué necesitas. La primera conversación no tiene costo ni compromiso.</p>
+          <a class="tel" href="tel:+520000000000">+52 000 000 0000</a>
+
+          <div class="wl">
+            <a class="way" href="https://wa.me/520000000000?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios">
+              <span class="wi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.4-4.2A8 8 0 118 18.6z"/></svg></span>
+              <span><small>WhatsApp</small><b>Escríbenos directamente</b></span>
+            </a>
+            <a class="way" href="mailto:contacto@axka.com">
+              <span class="wi"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+              <span><small>Correo</small><b>contacto@axka.com</b></span>
+            </a>
+            <div class="way">
+              <span class="wi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.5-6-10a6 6 0 1112 0c0 4.5-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg></span>
+              <span><small>Ubicación</small><b>Mérida, Yucatán, México</b></span>
+            </div>
+            <div class="way">
+              <span class="wi"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+              <span><small>Horario de atención</small><b>Lunes a viernes, 9:00 a 18:00</b></span>
+            </div>
+          </div>
+
+          <div class="next">
+            <div><strong>Te respondemos</strong>Revisamos tu mensaje y te contactamos.</div>
+            <div><strong>Conversamos</strong>Una llamada para entender tu idea.</div>
+            <div><strong>Recibes propuesta</strong>Con alcance, plazos y precio claros.</div>
+          </div>
+        </div>
+
+        <form class="fcard" id="contact-form">
+          <h3>Cuéntanos tu idea</h3>
+          <fieldset class="chips">
+            <legend>¿Qué te interesa?</legend>
+            <label><input type="radio" name="interes" value="Página web"><span>Página web</span></label>
+            <label><input type="radio" name="interes" value="Software a medida"><span>Software a medida</span></label>
+            <label><input type="radio" name="interes" value="IA y automatización"><span>IA y automatización</span></label>
+            <label><input type="radio" name="interes" value="Aún no lo sé"><span>Aún no lo sé</span></label>
+          </fieldset>
+          <label>Nombre<input name="nombre" required autocomplete="name"></label>
+          <label>Correo o teléfono<input name="contacto" required autocomplete="email"></label>
+          <label>¿Qué necesitas?<textarea name="mensaje" required placeholder="Por ejemplo: una página para mi empresa, o automatizar mis cotizaciones"></textarea></label>
+          <button class="btn" type="submit">Enviar mensaje</button>
+          <p class="note">Se abrirá tu correo con el mensaje listo para enviar.</p>
+          <p class="note">Tus datos solo se usan para responderte.</p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="ft">
+    <div class="wrap">
+      <div class="fcta">
+        <h2>¿Tienes una idea o un proceso que quieres mejorar?</h2>
+        <a class="btn light" href="#contacto">Hablemos</a>
+      </div>
+
+      <div class="fg">
+        <div>
+          <a class="logo" href="#inicio" aria-label="AXKA Digital Growth, inicio">AXKA<small>DIGITAL GROWTH</small></a>
+          <p class="tg">Software a la medida para empresas que quieren avanzar.</p>
+          <div class="soc">
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 11v5M8 8v.01M12 16v-5M12 13a2.5 2.5 0 015 0v3"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.5"/><path d="M16.5 7.5h.01"/></svg></a>
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4h-2.5A3.5 3.5 0 009 7.5V10H6.5v3H9v7h3v-7h2.5l.5-3H12V7.5c0-.3.2-.5.5-.5H15z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h3>Servicios</h3>
+          <ul>
+            <li><a href="#servicios">Páginas web</a></li>
+            <li><a href="#servicios">Software personalizado</a></li>
+            <li><a href="#servicios">IA y automatización</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Empresa</h3>
+          <ul>
+            <li><a href="#proceso">Cómo trabajamos</a></li>
+            <li><a href="#compromiso">Compromiso</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contacto</h3>
+          <ul>
+            <li><a href="tel:+520000000000">+52 000 000 0000</a></li>
+            <li><a href="mailto:contacto@axka.com">contacto@axka.com</a></li>
+            <li>Mérida, Yucatán, México</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="wm" aria-hidden="true"><span>AXKA</span></div>
+
+    <div class="wrap">
+      <div class="fb">
+        <span>© 2026 AXKA Digital Growth. Todos los derechos reservados.</span>
+        <span>Hecho en Mérida, Yucatán &nbsp;·&nbsp; <a href="#inicio">Volver arriba</a></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

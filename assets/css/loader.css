@@ -1,0 +1,68 @@
+/* =========================================================
+   LOADER — pantalla de carga
+   El logo se dibuja trazo a trazo y se rellena mientras la
+   página carga; en cuanto está lista, da paso al sitio.
+   Lógica y tiempos en assets/js/loader.js.
+   ========================================================= */
+
+/* Colores del loader (cámbialos aquí) */
+:root {
+  --loader-bg: var(--navy);
+  --loader-stroke: var(--sky); /* trazo mientras se dibuja */
+  --loader-word: #ffffff;      /* relleno de "AXKA" */
+  --loader-tag: var(--sky);    /* relleno de "DIGITAL GROWTH" */
+}
+
+/* Oculto por defecto: solo existe mientras <html> tiene .has-loader */
+.loader { display: none; }
+
+html.has-loader .loader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: var(--loader-bg);
+}
+
+/* Bloquea el scroll mientras carga */
+html.is-loading { overflow: hidden; }
+
+/* Fondo de marca mientras el sitio aparece (evita destello blanco) */
+html.has-loader body { background: var(--loader-bg); }
+
+/* El sitio aparece con la opacidad que calcula JS (--site-o) */
+html.has-loader body > header,
+html.has-loader body > main,
+html.has-loader body > footer { opacity: var(--site-o, 0); }
+
+/* Las animaciones del hero esperan a que termine la carga */
+html.is-loading .hero::after,
+html.is-loading .hero canvas,
+html.is-loading .hero h1 .w > span,
+html.is-loading .hero p,
+html.is-loading .hero .cta,
+html.is-loading .cue { animation-play-state: paused; }
+
+/* ---------- Logo ---------- */
+.loader-logo {
+  display: block;
+  width: min(clamp(220px, 36vw, 440px), 78vw);
+  height: auto;
+  overflow: visible;
+}
+
+.loader-outline { stroke: var(--loader-stroke); }
+.loader-fill .loader-word { fill: var(--loader-word); }
+.loader-fill .loader-tagline { fill: var(--loader-tag); }
+
+/* Texto solo para lectores de pantalla */
+.loader-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

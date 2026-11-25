@@ -1,0 +1,136 @@
+/* =========================================================
+   COMPROMISO — tabla "hoy vs. con AXKA"
+   ========================================================= */
+
+.com h2 { font-size: clamp(30px, 4.6vw, 56px); max-width: 20ch; }
+
+.com .top {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 48px;
+  align-items: end;
+}
+.com .top p { max-width: 40ch; }
+
+/* ---------- Tabla ---------- */
+.cmp { margin-top: 64px; }
+
+.cr {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 4fr) minmax(0, 4.2fr);
+  border-top: 1px solid var(--line);
+}
+.cr > div { padding: 32px; }
+.cr > div:last-child { background: var(--ibg); color: #fff; }
+
+/* Encabezado */
+.cr.hd { border-top: 0; }
+.cr.hd > div { padding: 16px 32px; font: 600 14px var(--font-body); color: var(--muted); }
+.cr.hd > div:last-child { color: var(--sky); border-radius: 4px 4px 0 0; }
+.cr:last-of-type > div:last-child { border-radius: 0 0 4px 4px; }
+
+.cr svg {
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin-bottom: 14px;
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.cr h3 { font-size: 22px; }
+.cr .c1 p { margin-top: 8px; font-size: 15.5px; color: var(--muted); }
+
+.pain { color: var(--muted); font-size: 16.5px; }
+.gain {
+  display: flex;
+  gap: 14px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.55;
+}
+.cr .gain svg { flex: none; width: 22px; height: 22px; margin: 3px 0 0; stroke: var(--sky); }
+
+/* Cierre */
+.cl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 56px;
+}
+.cl p {
+  max-width: 26ch;
+  font: 800 clamp(22px, 2.8vw, 32px)/1.2 var(--font-display);
+  letter-spacing: -.02em;
+}
+.cl .btn { animation: ring 2.8s ease-out infinite; }
+
+/* ---------- Animaciones (.live lo agrega JS) ---------- */
+.cmp.live .cr:not(.hd) {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .7s var(--ease-rise), transform .7s var(--ease-rise);
+}
+.cmp.live .cr.in { opacity: 1; transform: none; }
+
+/* Columna derecha se "descubre" de izquierda a derecha */
+.cmp.live .cr:not(.hd) > div:last-child {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path .9s cubic-bezier(.7, 0, .2, 1) .25s;
+}
+.cmp.live .cr.in > div:last-child { clip-path: inset(0 0 0 0); }
+
+/* Íconos se dibujan (pathLength=1 lo pone JS) */
+.cmp.live .cr:not(.hd) svg * {
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1.1s ease .3s;
+}
+.cmp.live .cr.in svg * { stroke-dashoffset: 0; }
+.cmp.live .cr.in .gain svg * { transition-delay: .9s; }
+
+.cmp.live .gain > span {
+  opacity: 0;
+  transform: translateX(-14px);
+  transition: opacity .6s .75s, transform .6s .75s;
+}
+.cmp.live .cr.in .gain > span { opacity: 1; transform: none; }
+
+.cmp.live .pain { transition: opacity .8s .5s; }
+.cmp.live .cr.in .pain { opacity: .6; }
+
+@keyframes ring {
+  0%       { box-shadow: 0 0 0 0 rgba(111, 155, 255, .5); }
+  70%, 100% { box-shadow: 0 0 0 14px rgba(111, 155, 255, 0); }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .com .top { grid-template-columns: 1fr; gap: 20px; }
+  .cr.hd { display: none; }
+  .cr {
+    grid-template-columns: 1fr;
+    margin-bottom: 20px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .cr > div { padding: 24px; }
+  .cr > div:nth-child(2)::before,
+  .cr > div:last-child::before {
+    display: block;
+    margin-bottom: 8px;
+    font: 600 13px var(--font-body);
+    color: var(--muted);
+  }
+  .cr > div:nth-child(2)::before { content: "Hoy"; }
+  .cr > div:last-child::before { content: "Con AXKA"; color: var(--sky); }
+  .cr .gain { flex-wrap: nowrap; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cl .btn { animation: none; }
+}

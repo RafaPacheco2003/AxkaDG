@@ -1,0 +1,136 @@
+/* =========================================================
+   SERVICIOS — pestañas con panel ilustrado
+   ========================================================= */
+
+.svc {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 40px;
+  align-items: stretch;
+}
+
+/* ---------- Pestañas ---------- */
+.tabs {
+  display: grid;
+  align-content: start;
+  border-top: 1px solid var(--line);
+}
+
+.tab {
+  position: relative;
+  padding: 28px 24px 28px 30px;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  opacity: .7;
+  transition: background .3s, opacity .3s;
+}
+.tab::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--ibg);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform .35s;
+}
+.tab h3 {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: clamp(21px, 2.3vw, 27px);
+}
+.tab h3 svg {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.tab p {
+  margin-top: 8px;
+  max-width: 44ch;
+  color: var(--muted);
+  font-size: 16px;
+}
+.tab:hover { opacity: 1; }
+.tab.on { background: var(--bg); opacity: 1; }
+.tab.on::before { transform: scaleY(1); }
+
+/* ---------- Panel ---------- */
+.sp {
+  padding: 36px;
+  background: var(--navy);
+  color: #fff;
+  border-radius: 4px;
+}
+
+/* Sin JS: se muestran todos los paneles apilados */
+.svc:not(.live) .pn + .pn { margin-top: 48px; }
+/* Con JS: solo el panel activo */
+.svc.live .pn { display: none; }
+.svc.live .pn.on { display: block; }
+
+.pn svg { display: block; width: 100%; height: auto; }
+
+/* Piezas de la ilustración */
+.pn .f  { fill: rgba(255, 255, 255, .08); stroke: rgba(255, 255, 255, .35); stroke-width: 1.2; }
+.pn .l  { fill: none; stroke: rgba(255, 255, 255, .55); stroke-width: 1.5; stroke-linecap: round; }
+.pn .a  { fill: #9db8ff; }
+.pn .s  { fill: none; stroke: #9db8ff; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.pn .nv { fill: none; stroke: #021b4a; stroke-width: 1.6; stroke-linecap: round; }
+
+.pn.on svg > * {
+  animation: rise .65s var(--ease-rise) both;
+  animation-delay: calc(var(--i, 0) * .07s);
+  transform-box: fill-box;
+}
+
+/* Lista de entregables */
+.pn ul {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 24px 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+  border-top: 1px solid rgba(255, 255, 255, .18);
+  font-size: 15.5px;
+  color: #e1e9fb;
+}
+.pn li { position: relative; padding-left: 24px; }
+.pn li::before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: .5em;
+  width: 11px;
+  height: 6px;
+  border-left: 2px solid #9db8ff;
+  border-bottom: 2px solid #9db8ff;
+  transform: rotate(-45deg);
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (max-width: 900px) {
+  .svc { grid-template-columns: 1fr; }
+  .sp { padding: 24px; }
+  .pn ul { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pn.on svg > * { animation: none; }
+}
