@@ -1,0 +1,79 @@
+# =========================================================
+#  AXKA Digital Growth — configuración del servidor (Hostinger)
+#  Hostinger usa LiteSpeed, que lee este archivo igual que Apache.
+#
+#  Estrategia de caché:
+#   · HTML  → nunca se guarda en caché: siempre se pide la versión nueva.
+#   · CSS, JS, imágenes, fuentes → caché de 1 año. Es seguro porque
+#     scripts/version-assets.mjs les pone ?v=<huella> y la URL cambia
+#     cada vez que el archivo cambia.
+# =========================================================
+
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+# ---------- Caché de página de LiteSpeed (LSCache): no guardar HTML ----------
+<IfModule LiteSpeed>
+  RewriteEngine On
+  RewriteCond %{REQUEST_URI} (^/$|\.html?$|/[^.]*$)
+  RewriteRule .* - [E=Cache-Control:no-cache]
+</IfModule>
+
+# ---------- Encabezados de caché para navegadores y CDN ----------
+<IfModule mod_headers.c>
+  # HTML, manifiesto, robots y sitemap: revalidar siempre (respuesta 304 si no cambió)
+  <FilesMatch "\.(html?|webmanifest|xml|txt)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+    Header unset Expires
+  </FilesMatch>
+
+  # Archivos versionados: caché larga e inmutable
+  <FilesMatch "\.(css|js|mjs|png|jpe?g|gif|webp|avif|svg|ico|woff2?|ttf|otf)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Seguridad básica
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+
+# Respaldo por si mod_headers no estuviera disponible
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 year"
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType application/manifest+json "access plus 0 seconds"
+  ExpiresByType application/xml "access plus 0 seconds"
+  ExpiresByType text/xml "access plus 0 seconds"
+  ExpiresByType text/plain "access plus 0 seconds"
+</IfModule>
+
+# ---------- Tipos de archivo ----------
+<IfModule mod_mime.c>
+  AddType application/manifest+json .webmanifest
+  AddType image/svg+xml .svg
+</IfModule>
+
+# ---------- Compresión ----------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/xml application/javascript application/json application/manifest+json image/svg+xml
+</IfModule>
+
+# ---------- No exponer archivos de desarrollo si se suben por error ----------
+<FilesMatch "^(package(-lock)?\.json|README\.md|\.DS_Store)$">
+  Require all denied
+</FilesMatch>
+RedirectMatch 404 ^/scripts(/|$)
+
+# ---------- (Opcional) Forzar HTTPS y quitar "www" ----------
+# Actívalo solo si en hPanel ya tienes SSL activo y NO usas la opción
+# "Forzar HTTPS" de Hostinger (si usas ambas puede haber redirecciones en bucle).
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteCond %{HTTPS} off
+#   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#   RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+#   RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+# </IfModule>
