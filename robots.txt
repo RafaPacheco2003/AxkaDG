@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://axka.com/sitemap.xml
+Sitemap: https://axkadg.com/sitemap.xml
